@@ -1,12 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configure Discord Bot</title>
+    <title>GR4NDM4</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Configure Your Discord Bot</h1>
-    <a href="https://largely-harmless-doe.ngrok-free.app">Login with Discord</a>
+    <!-- HEADER, includes Image and a little about the bot-->
+    <header class="header">
+        <div class="header-content">
+            <img src="grandma.gif" alt="Pixel Art Grandma" class="header-image">
+            <div class="header-text">
+                <h1>GR4NDM4</h1>
+                <h2>A Dashnet Discord Bot</h2>
+                <p>GR4NDM4 is a moderation and social bot for Dashnet Forums made by The Wizard.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Command Help, Should be enough to convey basic usage-->
+    <div class="command_help">
+        <h3>Command Help</h3>
+        <!-- CSS go brrrr-->
+        <p><span style="font-weight: bold">&lt;Parameter&gt;</span> is required</p>
+        <p><span style="font-weight: bold">[Parameter]</span> is optional</p>
+        <p><span style="font-weight: bold">|</span> refers to mutually exclusive arguments.</p>
+    </div>
+
+    <!-- The Meat. The bread and butter. Flex Column with Flex Rows for command categories-->
+    <div class="commands">
+        <h2 class="command_category">Social</h2>
+        <div class="command_row">
+            <!-- Cookie Command Card -->
+            <div class="command_card" onclick="copyCommandText('/cookie &lt;user&gt;',this)">
+                <p class="command_title">Cookie</p>
+                <p>/cookie &lt;user&gt;</p>
+                <p class="command_desc">Sends a cookie!</p>
+                <div class="alias_card">
+                    <p>Aliases</p>
+                    <p class="aliases">/sendcookie /giftcookie /givecookie</p>
+                </div>
+            </div>
+
+            <!-- Daily Command Card -->
+            <div class="command_card" onclick="copyCommandText('/daily [user]',this)">
+                <p class="command_title">Daily</p>
+                <p>/daily [user]</p>
+                <p class="command_desc">Get your daily reward or give it to someone else</p>
+                <div class="alias_card">
+                    <p>Aliases</p>
+                    <p class="aliases">/dailyreward</p>
+                </div>
+            </div>
+
+            <!-- Rep Command Card -->
+            <div class="command_card" onclick="copyCommandText('/rep &lt;user&gt;',this)">
+                <p class="command_title">Rep</p>
+                <p>/rep &lt;user&gt;</p>
+                <p class="command_desc">Sends a reputation point! Resets once a day</p>
+                <div class="alias_card">
+                    <p>Aliases</p>
+                    <p class="aliases">/sendrep /giftrep /giverep</p>
+                </div>
+            </div>
+
+            <!-- Profile Command Card -->
+            <div class="command_card" onclick="copyCommandText('/profile [user]',this)">
+                <p class="command_title">Profile</p>
+                <p>/profile [user]</p>
+                <p class="command_desc">View your profile or someone else's</p>
+                <div class="alias_card">
+                    <p>Aliases</p>
+                    <p class="aliases">/viewprofile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Link To Discord Login Page --> 
+    <h3>Dashnet Moderator? Configure commands here</h3>
+    <a class="discord-button" href="https://largely-harmless-doe.ngrok-free.app">Login with Discord</a>
+    <script src="script.js"></script>
 </body>
-</html>
+
+  </html>
