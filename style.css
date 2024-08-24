@@ -37,7 +37,6 @@ a:hover {
 /* Header Styles */
 .header {
     position: relative;
-    background: url('header-background.jpg') no-repeat center center/cover; /* Background image */
     color: white;
     padding: 40px 0;
     border-bottom: 4px solid #333; /* Subtle border at the bottom */
@@ -58,9 +57,11 @@ a:hover {
 }
 
 .header-text {
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+    background: #1e1e1e; /* Dark overlay for better text contrast */
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 5 -10px -10px rgba(76,76,76,0.3); /* Light grey in Negative */
 }
 
 .header-text h1 {
@@ -89,11 +90,9 @@ a:hover {
 }
 
 /* Command Help Section */
-.command_help {
-    background-color: #1e1e1e; /* Slightly lighter background to stand out */
-    border-radius: 10px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+.command_help {    
+    margin: 10px;
+    padding:10px;
 }
 
 .command_help h3 {
@@ -118,7 +117,15 @@ a:hover {
     margin-bottom: 0;
 }
 
-
+.category_description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #ccc; /* Slightly lighter text color for better readability */
+}
+.command_example {
+    color: #6ab0ff; /* Accent color for links */
+}
 /* Command Card Section */
 .commands::-webkit-scrollbar {
     display: none;
@@ -130,17 +137,29 @@ a:hover {
     align-items: center;
     ms-overflow-style: none;
     scrollbar-width: none;
+    overflow: hidden;
 }
 
 .command_row {
     background-color: #1c1c1c;
-    display: flex;
-    flex-direction: row;
     width: 100%;
     padding: 24px;
-    justify-content: center;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
     gap: 24px;
     overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+
+.command_row::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 /* Command Card */
@@ -157,6 +176,9 @@ a:hover {
     position: relative;
     box-sizing: border-box; /* Ensure padding is included in width/height */
     overflow: hidden; /* Ensure content does not overflow */
+    
+    flex: 0 0 auto; /* Allows content to grow and take available space */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 /* Maintain Consistent Height */
 .command_card .content {
@@ -188,7 +210,11 @@ a:hover {
         background-position: 0% 100%;
     }
 }
-
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
+}
 .command_card.clicked::before {
     content: 'Copied!';
     position: absolute;
@@ -203,6 +229,7 @@ a:hover {
     opacity: 1;
     transition: opacity 0.5s;
     pointer-events: none;
+    animation: fadeInOut 1.5s ease forwards;
 }
 
 .command_card:not(.clicked)::before {
@@ -226,7 +253,11 @@ a:hover {
         margin-bottom: 20px;
     }
 }
-
+@media only screen and (max-width: 1024px) {
+    .command_card {
+        width: 80%;
+    }
+}
 /* Components of Command Card */
 .command_category {
     font-weight: 800;
@@ -249,8 +280,9 @@ a:hover {
     margin: 10px 0;
 }
 
-/* Alias Cards */
-
+.command_example {
+    font-size: 18px;
+}
 /* Alias Cards */
 .alias_card {
     background-color: #444; /* Slightly lighter than card background */
@@ -263,6 +295,7 @@ a:hover {
     min-height: 45%; /* Ensure a minimum height for consistency */
     box-sizing: border-box; /* Include padding in height calculation */
     overflow: hidden; /* Handle any overflow */
+    min-height:130px;
 }
 
 .aliases {
@@ -271,6 +304,7 @@ a:hover {
     margin: 0;
     line-height: 1.4; /* Adjust line height for better spacing */
     text-align: center; /* Center align text */
+    text-wrap:pretty;
 }
 
 
