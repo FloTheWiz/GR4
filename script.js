@@ -40,8 +40,8 @@ function copyCommandText(command, element, event) {
         copiedTag.style.transform = 'translateY(-20px)'; // Increase upward movement for smooth animation
         setTimeout(() => {
             copiedTag.remove();
-        }, 500); // Wait for the fade-out transition to complete before removing
-    }, 1000); // Display for 1 second before starting fade-out
+        }, 800); // Wait for the fade-out transition to complete before removing
+    }, 500); // Display for 1 second before starting fade-out
 
     // Trigger the button's clicked animation
     element.classList.add('clicked');
