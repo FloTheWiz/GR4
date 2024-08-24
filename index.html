@@ -28,59 +28,11 @@
 
     <!-- The Meat. The bread and butter. Flex Column with Flex Rows for command categories-->
     <div class="commands">
-        <!-- Commented Out and Uncommented. If you see this. You didn't.
-        <h2 class="command_category">Social</h2>
-        <p class="category_description">These are a direct replacement for Tatsumaki's social commands</p>
-        <div class="command_row">
-            <div class="command_card" onclick="copyCommandText('/cookie &lt;user&gt;',this)">
-                <p class="command_title">Cookie</p>
-                <p>/cookie &lt;user&gt;</p>
-                <p class="command_desc">Sends a cookie!</p>
-                <div class="alias_card">
-                    <p>Aliases</p>
-                    <p class="aliases">/sendcookie /giftcookie /givecookie</p>
-                </div>
-            </div>
-
-            
-            <div class="command_card" onclick="copyCommandText('/daily [user]',this)">
-                <p class="command_title">Daily</p>
-                <p class="command_example">/daily [user]</p>
-                <p class="command_desc">Get your daily reward or give it to someone else</p>
-                <div class="alias_card">
-                    <p>Aliases</p>
-                    <p class="aliases">/dailyreward</p>
-                </div>
-            </div>
-
-            
-            <div class="command_card" onclick="copyCommandText('/rep &lt;user&gt;',this)">
-                <p class="command_title">Rep</p>
-                <p class="command_example">/rep &lt;user&gt;</p>
-                <p class="command_desc">Sends a reputation point! Resets once a day</p>
-                <div class="alias_card">
-                    <p>Aliases</p>
-                    <p class="aliases">/sendrep /giftrep /giverep</p>
-                </div>
-            </div>
-
-            
-            <div class="command_card" onclick="copyCommandText('/profile [user]',this)">
-                <p class="command_title">Profile</p>
-                <p class="command_example">/profile [user]</p>
-                <p class="command_desc">View your profile or someone else's</p>
-                <div class="alias_card">
-                    <p>Aliases</p>
-                    <p class="aliases">/viewprofile</p>
-                </div>
-            </div>
-        </div> -->
-        
         <h2 class="command_category">Tags</h2>
         <p class="category_description">Custom, Configurable commands! Also works in DMs!</p>
         <div class="command_row">
             <!-- Tag Command Card -->
-            <div class="command_card" onclick="copyCommandText('/tag &lt;tag_name&gt;',this)">
+            <div class="command_card" onclick="copyCommandText('/tag &lt;tag_name&gt;', this, event)">
                 <p class="command_title">Tag</p>
                 <p class="command_example">/tag <span class="aliases">&lt;tag_name&gt;</span></p>
                 <p class="command_desc">Sends a tag.</p>
@@ -88,10 +40,10 @@
                     <p>Aliases</p>
                     <p class="aliases">/t</p>
                 </div>
-                </div>
+            </div>
 
             <!-- Wiki Command Card -->    
-            <div class="command_card" onclick="copyCommandText('/wiki &lt;search_term&gt;',this)">
+            <div class="command_card" onclick="copyCommandText('/wiki &lt;search_term&gt;', this, event)">
                 <p class="command_title">Wiki</p>
                 <p class="command_example">/wiki <span class="aliases">&lt;search_term&gt;</span></p>
                 <p class="command_desc">Sends a wiki search result.</p>
@@ -102,7 +54,7 @@
             </div>
 
             <!-- Tag List Command Card -->
-            <div class="command_card" onclick="copyCommandText('/taglist [category]',this)">
+            <div class="command_card" onclick="copyCommandText('/taglist [category]', this, event)">
                 <p class="command_title">Tag List</p>
                 <p class="command_example">/taglist <span class="aliases">[category]</span></p>
                 <p class="command_desc">Sends a list of all tags accessible to you, or in a category.</p>
@@ -111,41 +63,39 @@
                     <p class="aliases">/tl, /listtags /lt</p>
                 </div>
             </div>
-            
         </div>
         <h2 class="command_category">Polls</h2>
         <p class="category_description">Create and manage polls!</p>
         <div class="command_row">
-        <!-- Poll Command Card --> 
-        <div class="command_card" onclick="copyCommandText('/poll &lt;title&gt;',this)">
-            <p class="command_title">Poll</p>
-            <p class="command_example">/poll <span class="aliases">&lt;title&gt;</span></title>
-            <p class="command_desc">Starts a Poll. It will ask you for more info.</p>
-            <div class="alias_card">
-                <p>Aliases</p>
-                <p class="aliases">/p, /createpoll /createnewpoll /newpoll</p>
+            <!-- Poll Command Card --> 
+            <div class="command_card" onclick="copyCommandText('/poll &lt;title&gt;', this, event)">
+                <p class="command_title">Poll</p>
+                <p class="command_example">/poll <span class="aliases">&lt;title&gt;</span></p>
+                <p class="command_desc">Starts a Poll. It will ask you for more info.</p>
+                <div class="alias_card">
+                    <p>Aliases</p>
+                    <p class="aliases">/p, /createpoll /createnewpoll /newpoll</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Poll Status-->
-        <div class="command_card" onclick="copyCommandText('/pollstatus [poll_name]',this)">
-            <p class="command_title">Poll Status</p>
-            <p class="command_example">/pollstatus <span class="aliases">[poll_name]</span></p>
-            <p class="command_desc">View the status of all active (public) polls, or a specified poll</p>
-            <div class="alias_card">
-                <p>Aliases</p>
-                <p class="aliases">/ps, /pollstatus</p>
+            <!-- Poll Status -->
+            <div class="command_card" onclick="copyCommandText('/pollstatus [poll_name]', this, event)">
+                <p class="command_title">Poll Status</p>
+                <p class="command_example">/pollstatus <span class="aliases">[poll_name]</span></p>
+                <p class="command_desc">View the status of all active (public) polls, or a specified poll</p>
+                <div class="alias_card">
+                    <p>Aliases</p>
+                    <p class="aliases">/ps, /pollstatus</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="login">
-    <!-- Link To Discord Login Page --> 
-    <h3>Dashnet Moderator? Configure commands here</h3>
-    <a class="discord-button" href="https://largely-harmless-doe.ngrok-free.app">Login with Discord</a>
 
-</div>
+    <div class="login">
+        <!-- Link To Discord Login Page --> 
+        <h3>Dashnet Moderator? Configure commands here</h3>
+        <a class="discord-button" href="https://largely-harmless-doe.ngrok-free.app">Login with Discord</a>
+    </div>
     <script src="script.js"></script>
 </body>
-
-  </html>
+</html>
